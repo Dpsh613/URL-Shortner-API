@@ -1,0 +1,8 @@
+# Ignore node modules
+server-app/node_modules/
+
+# Ignore environment variable files
+server-app/.env
+
+# TypeScript build output
+server-app/dist/
