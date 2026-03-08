@@ -15,7 +15,7 @@ app.use(express.json()); ///When data comes from the frontend, it arrives as a r
 app.use(express.urlencoded({ extended: true })); // This allows your backend to understand data sent from standard HTML Forms (`<form>`). `extended: true` just means it uses a powerful library to parse nested objects.
 app.use(
   cors({
-    origin: "https://url-shortner-api-acbq.onrender.com",
+    origin: "https://url-shortner-api-1egd.onrender.com",
     credentials: true, // If your frontend sends Cookies (for login sessions), this must be set to `true`, or the browser will throw the cookies away.
   }),
 );
