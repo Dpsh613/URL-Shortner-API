@@ -10,7 +10,7 @@ const shortUrlSchema = new mongoose.Schema(
     shortUrl: {
       type: String,
       required: true,
-      default: () => nanoid().substring(0, 10),
+      default: () => nanoid().substring(0, 10), // what this means ? substring is nanoid function ?
     },
     clicks: {
       type: Number,
