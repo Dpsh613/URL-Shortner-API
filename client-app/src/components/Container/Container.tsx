@@ -8,12 +8,15 @@ import DataTable from "../DataTable/DataTable";
 interface IContainerProps {}
 
 const Container: React.FunctionComponent<IContainerProps> = () => {
-  const[data, setData] = React.useState<UrlData[]>([]);
+  const [data, setData] = React.useState<UrlData[]>([]);
 
   const fetchTableData = async () => {
-    const response = await axios.get(`${serverUrl}/shortUrl`);
-    console.log("the response from server is:",   response);
-    setData(response.data);
+    try {
+      const response = await axios.get(`${serverUrl}/shortUrl`);
+      setData(response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   React.useEffect(() => {
@@ -22,7 +25,8 @@ const Container: React.FunctionComponent<IContainerProps> = () => {
 
   return (
     <>
-      <FormContainer />
+      {/* Pass fetchTableData down so it updates the table immediately upon submit */}
+      <FormContainer updateData={fetchTableData} />
       <DataTable data={data} updateData={fetchTableData} />
     </>
   );

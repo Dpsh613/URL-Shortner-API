@@ -17,7 +17,7 @@ app.use(
   cors({
     origin: "http://localhost:3000",
     credentials: true, // If your frontend sends Cookies (for login sessions), this must be set to `true`, or the browser will throw the cookies away.
-  })
+  }),
 );
 
 app.use("/api/", shortUrl);
